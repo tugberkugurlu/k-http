@@ -1,0 +1,36 @@
+{
+  "locked": false,
+  "version": 1,
+  "libraries": {
+    "Microsoft.Framework.Runtime.Interfaces/1.0.0-beta4-11143": {
+      "sha": "FXtnDkVmCmEAxIVB/VP5CDCT96T6LDx327jnjNSmhsWqCXdTOr7UjKCQPFybYkHcY20ITU9ROs1jBX0WP8vfRA==",
+      "dependencySets": {
+        "Asp.NetCore,Version=v5.0": {
+          "System.IO": "4.0.10-beta-22625",
+          "System.Reflection": "4.0.10-beta-22625",
+          "System.Runtime": "4.0.20-beta-22625",
+          "System.Runtime.Extensions": "4.0.10-beta-22625",
+          "System.Threading.Tasks": "4.0.10-beta-22625",
+          "System.ComponentModel": "4.0.0-beta-22625"
+        }
+      },
+      "frameworkAssemblies": {
+        "Asp.Net,Version=v5.0": [
+          "mscorlib",
+          "System",
+          "System.Core",
+          "Microsoft.CSharp"
+        ]
+      },
+      "contents": {
+        "Microsoft.Framework.Runtime.Interfaces.1.0.0-beta4-11143.nupkg": {},
+        "Microsoft.Framework.Runtime.Interfaces.1.0.0-beta4-11143.nupkg.sha512": {},
+        "Microsoft.Framework.Runtime.Interfaces.nuspec": {},
+        "lib\\aspnet50\\Microsoft.Framework.Runtime.Interfaces.dll": {},
+        "lib\\aspnet50\\Microsoft.Framework.Runtime.Interfaces.xml": {},
+        "lib\\aspnetcore50\\Microsoft.Framework.Runtime.Interfaces.dll": {},
+        "lib\\aspnetcore50\\Microsoft.Framework.Runtime.Interfaces.xml": {}
+      }
+    }
+  }
+}

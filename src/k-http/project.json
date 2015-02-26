@@ -1,0 +1,14 @@
+{
+    "dependencies": {
+    },
+	"commands": {
+		"k-http": "run"
+	},
+    "frameworks": {
+        "aspnet50": { 
+            "dependencies": {
+                "Microsoft.Framework.Runtime.Interfaces": "1.0.0-*"
+            }
+        }
+    }
+}
