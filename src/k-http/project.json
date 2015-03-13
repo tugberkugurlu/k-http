@@ -5,7 +5,7 @@
 		"k-http": "run"
 	},
     "frameworks": {
-        "aspnet50": { 
+        "dnx451": { 
             "dependencies": {
                 "Microsoft.Framework.Runtime.Interfaces": "1.0.0-*"
             }
