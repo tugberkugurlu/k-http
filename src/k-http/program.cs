@@ -14,6 +14,7 @@ public class Program
     {
         Console.WriteLine("Hello World");
         Console.WriteLine(_appEnv.ApplicationBasePath);
+        Console.WriteLine(Environment.CurrentDirectory);
         foreach(var arg in args)
         {
             Console.WriteLine(arg);

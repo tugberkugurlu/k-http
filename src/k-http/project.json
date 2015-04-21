@@ -1,13 +1,13 @@
 {
     "dependencies": {
     },
-	"commands": {
-		"k-http": "run"
-	},
+    "commands": {
+        "k-http": "run"
+    },
     "frameworks": {
-        "dnx451": { 
+        "dnx451": {
             "dependencies": {
-                "Microsoft.Framework.Runtime.Interfaces": "1.0.0-*"
+                "Microsoft.Framework.Runtime.Interfaces": "1.0.0-beta4-*"
             }
         }
     }
