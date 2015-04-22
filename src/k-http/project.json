@@ -1,4 +1,9 @@
 {
+    "description": "Command-line HTTP server suitable for testing and local development to host static files.",
+    "version": "0.1.0-beta-002",
+    "authors": [
+        "Tugberk Ugurlu"
+    ],
     "dependencies": {
     },
     "commands": {
