@@ -1,6 +1,6 @@
 # k-http
 
-Command-line HTTP server suitable for testing and local development to host static files. Written on top of ASP.NET 5 and inspired by nodejs [http-server](http://www.tugberkugurlu.com/archive/quickly-hosting-static-files-in-your-development-environment-with-node-http-server).
+Command-line HTTP server suitable for testing and local development to host static files with zero configuration. Written on top of ASP.NET 5 and inspired by nodejs [http-server](http://www.tugberkugurlu.com/archive/quickly-hosting-static-files-in-your-development-environment-with-node-http-server).
 
 ### Installation
 
