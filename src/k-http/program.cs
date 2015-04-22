@@ -8,7 +8,11 @@ using Microsoft.Framework.Runtime;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Http;
 using Microsoft.Framework.Logging;
+using Microsoft.AspNet.FileProviders;
+using Microsoft.AspNet.StaticFiles;
 using System.Threading;
+using System.Collections;
+using System.Collections.Generic;
 
 public class Program
 {
@@ -24,18 +28,22 @@ public class Program
     public void Main(string[] args)
     {
         var config = new Configuration();
-        config.AddIniFile(Path.Combine(_appEnv.ApplicationBasePath, "config.ini"));
-        // config.AddCommandLine(args);
+        var defaultConfigData = new List<KeyValuePair<string, string>> 
+        {
+            new KeyValuePair<string, string>("server.urls", "http://localhost:5000") 
+        };
         
-        IHostingEngine engine = WebHost.CreateEngine(_hostServiceProvider, config);
+        config.AddInMemoryConfig(defaultConfigData);
+        config.AddCommandLine(args);
         
+        IHostingEngine engine = WebHost.CreateEngine(_hostServiceProvider, config);        
         engine.UseServer("Microsoft.AspNet.Server.WebListener")
               .UseStartup(app => 
                           {
-                              app.Run(async ctx => 
-                                      {
-                                          await ctx.Response.WriteAsync("Foo");
-                                      });
+                              app.UseStaticFiles(new StaticFileOptions 
+                                                 {
+                                                     FileProvider = new PhysicalFileProvider(Environment.CurrentDirectory)
+                                                 });
                           });
         
         var serverShutdown = engine.Start();
@@ -65,14 +73,19 @@ public class Program
         });
 
         shutdownHandle.WaitOne();
-        
-        // foreach(var arg in args)
-        // {
-        //     Console.WriteLine(arg);
-        // }
-        
-        // Console.WriteLine("Hello World");
-        // Console.WriteLine(_appEnv.ApplicationBasePath);
-        // Console.WriteLine(Environment.CurrentDirectory);
+    }
+}
+
+internal static class ConfigurationExtensions
+{
+    public static IConfigurationSourceRoot AddInMemoryConfig(this IConfigurationSourceRoot configuration, IEnumerable<KeyValuePair<string, string>> initialData)
+    {
+        if(initialData == null)
+        {
+            throw new ArgumentNullException(nameof(initialData));
+        }
+
+        configuration.Add(new MemoryConfigurationSource(initialData));
+        return configuration;
     }
 }
