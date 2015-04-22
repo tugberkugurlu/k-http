@@ -9,6 +9,6 @@ Command-line HTTP server suitable for testing and local development to host stat
 - You should have **k-http** under your path. Run this under the desired directory to expose the static files through http;//localhost:5000
 - You can override the URL using `--server-urls` command line argument: `k-http --server.urls=http://localhost:5005`
 
-After you have it globally installed, You Can run k-http under the directory which needs to be hosted:
+After you have it globally installed, you Can run `k-http` under the directory which needs to be hosted:
 
 ![demo-image](media/demo.PNG)
