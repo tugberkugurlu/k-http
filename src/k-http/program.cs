@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Hosting;
 using Microsoft.Framework.ConfigurationModel;
@@ -23,7 +24,7 @@ public class Program
     public void Main(string[] args)
     {
         var config = new Configuration();
-        config.AddIniFile("config.ini");
+        config.AddIniFile(Path.Combine(_appEnv.ApplicationBasePath, "config.ini"));
         // config.AddCommandLine(args);
         
         IHostingEngine engine = WebHost.CreateEngine(_hostServiceProvider, config);
