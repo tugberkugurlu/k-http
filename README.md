@@ -12,3 +12,7 @@ Command-line HTTP server suitable for testing and local development to host stat
 After you have it globally installed, you Can run `k-http` under the directory which needs to be hosted:
 
 ![demo-image](media/demo.PNG)
+
+### Development
+
+The project is based on dnx-clr-win-x86 runtime, v1.0.0-beta5-11611 from [aspnetvnext MyGet feed](https://www.myget.org/gallery/aspnetvnext).
