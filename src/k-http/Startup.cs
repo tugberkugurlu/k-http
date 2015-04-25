@@ -11,15 +11,21 @@ namespace KHttp
     {
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<IFileProvider>(_ => new PhysicalFileProvider(Environment.CurrentDirectory));
         }
 
-        public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory, IFileProvider fileProvider)
         {
             ConfigureLogging(loggerFactory);
 
             app.UseStaticFiles(new StaticFileOptions
             {
-                FileProvider = new PhysicalFileProvider(Environment.CurrentDirectory)
+                FileProvider = fileProvider
+            });
+
+            app.UseDirectoryBrowser(new DirectoryBrowserOptions
+            {
+                FileProvider = fileProvider
             });
         }
 
