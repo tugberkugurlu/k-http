@@ -51,7 +51,6 @@ namespace KHttp
 
             var ignored = Task.Run(() =>
             {
-                Console.WriteLine("Started");
                 Console.ReadLine();
                 appShutdownService.RequestShutdown();
             });

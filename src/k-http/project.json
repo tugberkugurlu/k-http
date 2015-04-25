@@ -12,12 +12,13 @@
     "frameworks": {
         "dnx451": {
             "dependencies": {
-                "Microsoft.Framework.Runtime.Interfaces": "1.0.0-beta5-*",
-                "Microsoft.Framework.ConfigurationModel": "1.0.0-beta5-*",
                 "Microsoft.AspNet.Hosting": "1.0.0-beta5-*",
-                "Microsoft.Framework.DependencyInjection": "1.0.0-beta5-*",
+                "Microsoft.AspNet.Server.WebListener": "1.0.0-beta5-*",
                 "Microsoft.AspNet.StaticFiles": "1.0.0-beta5-*",
-                "Microsoft.AspNet.Server.WebListener": "1.0.0-beta5-*"
+                "Microsoft.Framework.ConfigurationModel": "1.0.0-beta5-*",
+                "Microsoft.Framework.DependencyInjection": "1.0.0-beta5-*",
+                "Microsoft.Framework.Logging.Console": "1.0.0-beta5-*",
+                "Microsoft.Framework.Runtime.Interfaces": "1.0.0-beta5-*"
             }
         }
     }
