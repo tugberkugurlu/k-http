@@ -6,6 +6,13 @@
     "projectUrl": "https://github.com/tugberkugurlu/k-http",
     "licenseUrl": "https://raw.githubusercontent.com/tugberkugurlu/k-http/master/LICENSE",
     "dependencies": {
+        "Microsoft.AspNet.Hosting": "1.0.0-beta5-*",
+        "Microsoft.AspNet.Server.WebListener": "1.0.0-beta5-*",
+        "Microsoft.AspNet.StaticFiles": "1.0.0-beta5-*",
+        "Microsoft.Framework.ConfigurationModel": "1.0.0-beta5-*",
+        "Microsoft.Framework.DependencyInjection": "1.0.0-beta5-*",
+        "Microsoft.Framework.Logging.Console": "1.0.0-beta5-*",
+        "Microsoft.Framework.Runtime.Interfaces": "1.0.0-beta5-*"
     },
     "commands": {
         "k-http": "run"
@@ -13,13 +20,6 @@
     "frameworks": {
         "dnx451": {
             "dependencies": {
-                "Microsoft.AspNet.Hosting": "1.0.0-beta5-*",
-                "Microsoft.AspNet.Server.WebListener": "1.0.0-beta5-*",
-                "Microsoft.AspNet.StaticFiles": "1.0.0-beta5-*",
-                "Microsoft.Framework.ConfigurationModel": "1.0.0-beta5-*",
-                "Microsoft.Framework.DependencyInjection": "1.0.0-beta5-*",
-                "Microsoft.Framework.Logging.Console": "1.0.0-beta5-*",
-                "Microsoft.Framework.Runtime.Interfaces": "1.0.0-beta5-*"
             }
         }
     }
