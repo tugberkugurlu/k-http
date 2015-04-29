@@ -12,7 +12,8 @@
         "Microsoft.Framework.ConfigurationModel": "1.0.0-beta5-11240",
         "Microsoft.Framework.DependencyInjection": "1.0.0-beta5-11269",
         "Microsoft.Framework.Logging.Console": "1.0.0-beta5-11266",
-        "Microsoft.Framework.Runtime.Interfaces": "1.0.0-beta5-11611"
+        "Microsoft.Framework.Runtime.Interfaces": "1.0.0-beta5-11611",
+        "Microsoft.Framework.CommandLineUtils": { "version": "1.0.0-beta5-11631", "type": "build" }
     },
     "commands": {
         "k-http": "run"
