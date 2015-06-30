@@ -1,5 +1,5 @@
 ﻿using System;
-using Microsoft.Framework.Expiration.Interfaces;
+using Microsoft.Framework.Caching;
 
 namespace KHttp.Tests.Common
 {

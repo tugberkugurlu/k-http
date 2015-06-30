@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using Microsoft.AspNet.FileProviders;
-using Microsoft.Framework.Expiration.Interfaces;
+using Microsoft.Framework.Caching;
 
 namespace KHttp.Tests.Common
 {
@@ -59,7 +58,7 @@ namespace KHttp.Tests.Common
             }
         }
 
-        public virtual IExpirationTrigger Watch(string filter)
+        public IExpirationTrigger Watch(string filter)
         {
             TestFileTrigger trigger;
             if (!_fileTriggers.TryGetValue(filter, out trigger) || trigger.IsExpired)

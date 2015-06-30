@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using Microsoft.Framework.ConfigurationModel;
+using Microsoft.Framework.Configuration;
 
 namespace KHttp
 {
-    public class ConfigurationBuilder
+    public class InternalConfigurationBuilder
     {
         private readonly string[] _args;
         private readonly IEnumerable<KeyValuePair<string, string>> _defaultConfigData;
 
-        public ConfigurationBuilder(string[] args)
+        public InternalConfigurationBuilder(string[] args)
         {
             if (args == null) throw new ArgumentNullException(nameof(args));
 
@@ -20,13 +20,13 @@ namespace KHttp
             };
         }
 
-        public Configuration Build()
+        public IConfiguration Build()
         {
-            var config = new Configuration();
-            config.AddInMemoryConfig(_defaultConfigData);
-            config.AddCommandLine(_args);
+            var builder = new ConfigurationBuilder();
+            builder.AddInMemoryConfig(_defaultConfigData);
+            builder.AddCommandLine(_args);
 
-            return config;
+            return builder.Build();
         }
     }
 }

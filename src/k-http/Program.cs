@@ -23,7 +23,7 @@ namespace KHttp
 
         public void Main(string[] args)
         {
-            var configurationBuilder = new ConfigurationBuilder(args);
+            var configurationBuilder = new InternalConfigurationBuilder(args);
             var config = configurationBuilder.Build();
             var webHostBuilder = new WebHostBuilder(_hostServiceProvider, config)
                 .UseServer(WebServerAssemblyName)
