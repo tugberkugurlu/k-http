@@ -11,13 +11,16 @@ namespace KHttp
 {
     public class Program
     {
-        private const string WebServerAssemblyName = "Microsoft.AspNet.Server.WebListener";
+        private const string WebListenerAssemblyName = "Microsoft.AspNet.Server.WebListener";
+        private const string KestrelAssemblyName = "Kestrel";
         private readonly IApplicationEnvironment _appEnv;
+        private readonly IRuntimeEnvironment _runtimeEnvironment;
         private readonly IServiceProvider _hostServiceProvider;
 
-        public Program(IApplicationEnvironment appEnv, IServiceProvider hostServiceProvider)
+        public Program(IApplicationEnvironment appEnv, IRuntimeEnvironment runtimeEnvironment, IServiceProvider hostServiceProvider)
         {
             _appEnv = appEnv;
+            _runtimeEnvironment = runtimeEnvironment;
             _hostServiceProvider = hostServiceProvider;
         }
 
@@ -25,8 +28,9 @@ namespace KHttp
         {
             var configurationBuilder = new InternalConfigurationBuilder(args);
             var config = configurationBuilder.Build();
+            var serverNameToUse = _runtimeEnvironment.OperatingSystem == "Windows" ? WebListenerAssemblyName : KestrelAssemblyName;
             var webHostBuilder = new WebHostBuilder(_hostServiceProvider, config)
-                .UseServer(WebServerAssemblyName)
+                .UseServer(serverNameToUse)
                 .UseStartup(typeof(Startup));
 
             IHostingEngine engine = webHostBuilder.Build();

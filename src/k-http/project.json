@@ -7,12 +7,13 @@
     "licenseUrl": "https://raw.githubusercontent.com/tugberkugurlu/k-http/master/LICENSE",
     "dependencies": {
         "Microsoft.AspNet.Hosting": "1.0.0-beta5",
-        "Microsoft.AspNet.Server.WebListener": "1.0.0-beta5",
         "Microsoft.AspNet.StaticFiles": "1.0.0-beta5",
         "Microsoft.Framework.Configuration": "1.0.0-beta5",
         "Microsoft.Framework.DependencyInjection": "1.0.0-beta5",
         "Microsoft.Framework.Logging.Console": "1.0.0-beta5",
-        "Microsoft.Framework.Runtime": "1.0.0-beta5"
+        "Microsoft.Framework.Runtime": "1.0.0-beta5",
+        "Microsoft.AspNet.Server.WebListener": "1.0.0-beta5",
+        "Kestrel": "1.0.0-beta5"
     },
     "commands": {
         "k-http": "run"
