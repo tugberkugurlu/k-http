@@ -28,7 +28,8 @@ namespace KHttp
         {
             var configurationBuilder = new InternalConfigurationBuilder(args);
             var config = configurationBuilder.Build();
-            var serverNameToUse = _runtimeEnvironment.OperatingSystem == "Windows" ? WebListenerAssemblyName : KestrelAssemblyName;
+            var isWindows = _runtimeEnvironment.OperatingSystem == "Windows";
+            var serverNameToUse = isWindows ? WebListenerAssemblyName : KestrelAssemblyName;
             var webHostBuilder = new WebHostBuilder(_hostServiceProvider, config)
                 .UseServer(serverNameToUse)
                 .UseStartup(typeof(Startup));
@@ -36,18 +37,26 @@ namespace KHttp
             IHostingEngine engine = webHostBuilder.Build();
             var serverShutdown = engine.Start();
             var loggerFactory = engine.ApplicationServices.GetRequiredService<ILoggerFactory>();
+            var logger = loggerFactory.CreateLogger<Program>();
+
+            if(!isWindows)
+            {
+                logger.LogInformation("k-http has started, hit ENTER to stop...");
+            }
+
             var appShutdownService = engine.ApplicationServices.GetRequiredService<IApplicationShutdown>();
             var shutdownHandle = new ManualResetEvent(false);
 
             appShutdownService.ShutdownRequested.Register(() =>
             {
+                logger.LogInformation("k-http is shutting down...");
+
                 try
                 {
                     serverShutdown.Dispose();
                 }
                 catch (Exception ex)
                 {
-                    var logger = loggerFactory.CreateLogger<Program>();
                     logger.LogError("Dispose threw an exception.", ex);
                 }
                 shutdownHandle.Set();
