@@ -1,6 +1,6 @@
 {
     "description": "Command-line HTTP server suitable for testing and local development to host static files.",
-    "version": "0.1.0-beta5-000",
+    "version": "0.1.0-beta5-100",
     "authors": [ "Tugberk Ugurlu" ],
     "tags": [ "http", "http-server", "static-files-server", "aspnet5" ],
     "projectUrl": "https://github.com/tugberkugurlu/k-http",
