@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.Framework.Configuration;
+using Microsoft.Framework.Configuration.Memory;
 
 namespace KHttp
 {

@@ -2,7 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Hosting;
 using Microsoft.Framework.DependencyInjection;
-using Microsoft.Framework.Runtime;
+using Microsoft.Dnx.Runtime;
 using Microsoft.Framework.Logging;
 using System.Threading;
 using Microsoft.AspNet.Hosting.Internal;
@@ -12,7 +12,7 @@ namespace KHttp
     public class Program
     {
         private const string WebListenerAssemblyName = "Microsoft.AspNet.Server.WebListener";
-        private const string KestrelAssemblyName = "Kestrel";
+        private const string KestrelAssemblyName = "Microsoft.AspNet.Server.Kestrel";
         private readonly IApplicationEnvironment _appEnv;
         private readonly IRuntimeEnvironment _runtimeEnvironment;
         private readonly IServiceProvider _hostServiceProvider;

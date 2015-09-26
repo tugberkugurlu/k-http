@@ -1,19 +1,19 @@
 {
     "description": "Command-line HTTP server suitable for testing and local development to host static files.",
-    "version": "0.1.0-beta5-100",
+    "version": "0.1.0-beta7-001",
     "authors": [ "Tugberk Ugurlu" ],
     "tags": [ "http", "http-server", "static-files-server", "aspnet5" ],
     "projectUrl": "https://github.com/tugberkugurlu/k-http",
     "licenseUrl": "https://raw.githubusercontent.com/tugberkugurlu/k-http/master/LICENSE",
     "dependencies": {
-        "Microsoft.AspNet.Hosting": "1.0.0-beta5",
-        "Microsoft.AspNet.StaticFiles": "1.0.0-beta5",
-        "Microsoft.Framework.Configuration": "1.0.0-beta5",
-        "Microsoft.Framework.DependencyInjection": "1.0.0-beta5",
-        "Microsoft.Framework.Logging.Console": "1.0.0-beta5",
-        "Microsoft.Framework.Runtime": "1.0.0-beta5",
-        "Microsoft.AspNet.Server.WebListener": "1.0.0-beta5",
-        "Kestrel": "1.0.0-beta5"
+        "Microsoft.AspNet.Hosting": "1.0.0-beta7",
+        "Microsoft.AspNet.StaticFiles": "1.0.0-beta7",
+        "Microsoft.Framework.Configuration": "1.0.0-beta7",
+        "Microsoft.Framework.DependencyInjection": "1.0.0-beta7",
+        "Microsoft.Framework.Logging.Console": "1.0.0-beta7",
+        "Microsoft.Dnx.Runtime.Abstractions": "1.0.0-beta7",
+        "Microsoft.AspNet.Server.WebListener": "1.0.0-beta7",
+        "Microsoft.AspNet.Server.Kestrel": "1.0.0-beta7"
     },
     "commands": {
         "k-http": "run"
